@@ -32,6 +32,9 @@ RUN chmod 0777 ./db && chmod 0777 ./runtime && chmod 0777 ./web/assets
 # Запускаем миграции
 RUN php yii migrate --interactive=0
 
+# Выставляем права
+RUN chmod 0777 ./db/db.db
+
 # Копируем конфиг
 #COPY ./env/dev/.env .
 
